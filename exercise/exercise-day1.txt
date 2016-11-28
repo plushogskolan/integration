@@ -1,0 +1,12 @@
+Läsning: https://jersey.java.net/documentation/latest/jaxrs-resources.html
+Avsnitt: 3.1, 3.1.1, 3.1.2 
+
+Uppgift: 
+Försök på egen hand skapa en CustomerService m.h.a. JAX-RS
+
+Arkitekturen är enligt följande:
+
+CustomerService - en klass som exponerar CRUD-funktionalitet via HTTP m.h.a. JAX-RS
+CustomerRepository - ett interface som definierar CRUD-funktionalitet 
+InMemoryCustomerRepository - implementation av CustomerRepository som använder en HashMap som intern lagring
+Customer - en klass som innehåller id, firstName, lastName, customerNumber
