@@ -1,0 +1,2 @@
+Läsning: 3.4 - 3.6, 7.2, 7.3, 12.1, 12.2
+(https://jersey.java.net/documentation/latest/index.html)
