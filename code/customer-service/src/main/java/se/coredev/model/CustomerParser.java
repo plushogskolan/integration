@@ -1,5 +1,7 @@
 package se.coredev.model;
 
+import java.util.List;
+
 import nu.xom.Document;
 import nu.xom.Element;
 
@@ -24,19 +26,25 @@ public final class CustomerParser {
 	}
 
 	public static String asXml(Customer customer) {
-		
-		try {
-			Element root = new Element("customer");
-			root.appendChild(createElement("id", customer.getId().toString()));
-			root.appendChild(createElement("firstName", customer.getFirstName()));
-			root.appendChild(createElement("lastName", customer.getLastName()));
-			root.appendChild(createElement("number", customer.getCustomerNumber()));
-			
-			return new Document(root).toXML(); 
+		Element root = createCustomerElement(customer);
+		return new Document(root).toXML();
+	}
+
+	public static String asXml(List<Customer> customers) {
+		Element root = new Element("customers");
+		for (Customer customer : customers) {
+			root.appendChild(createCustomerElement(customer));
 		}
-		catch (Exception e) {
-			throw new RuntimeException(e);
-		}
+		return new Document(root).toXML();
+	}
+
+	private static Element createCustomerElement(Customer customer) {
+		Element root = new Element("customer");
+		root.appendChild(createElement("id", customer.getId().toString()));
+		root.appendChild(createElement("firstName", customer.getFirstName()));
+		root.appendChild(createElement("lastName", customer.getLastName()));
+		root.appendChild(createElement("number", customer.getCustomerNumber()));
+		return root;
 	}
 
 	private static Element createElement(String name, String value) {

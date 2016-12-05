@@ -1,5 +1,7 @@
 package se.coredev.repository;
 
+import java.util.List;
+
 import se.coredev.model.Customer;
 
 public interface CustomerRepository {
@@ -12,4 +14,5 @@ public interface CustomerRepository {
 
 	boolean delete(Long id);
 
+	List<Customer> getAll();
 }

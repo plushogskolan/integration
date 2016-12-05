@@ -8,7 +8,7 @@ public final class Customer {
 	private final String firstName;
 	private final String lastName;
 	private final String customerNumber;
-
+	
 	public Customer(Long id, String firstName, String lastName, String customerNumber) {
 		this.id = id;
 		this.firstName = firstName;

@@ -1,5 +1,6 @@
 package se.coredev.service;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,10 @@ public final class CustomerService {
 
 	public Customer getCustomer(Long id) {
 		return customerRepository.get(id);
+	}
+
+	public List<Customer> getAllCustomers() {
+		return customerRepository.getAll();
 	}
 
 	public Customer updateCustomer(Customer customer) {
