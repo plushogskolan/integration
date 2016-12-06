@@ -1,0 +1,6 @@
+Kapitel 8 
+https://jersey.java.net/documentation/latest/index.html
+
+Jackson documentation
+https://github.com/FasterXML/jackson-annotations/wiki/Jackson-Annotations
+
